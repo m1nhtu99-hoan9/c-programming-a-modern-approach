@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 /*
-  After the `scanf` call, `x` will be 12, `i` will be 0.3 and `y` will be 45.6
+  After the `scanf` call, `x` will be 10, `i` will be 0.3 and `y` will be 5 
 */
 
-int main() {
+int main()
+{
   int i, j;
-  float x; 
+  float x;
 
   printf("Please input: ");
   scanf("%d%f%d", &i, &x, &j);

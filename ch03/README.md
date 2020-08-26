@@ -12,3 +12,7 @@
 ## Relating Chapters
 
 Chapter 22 
+
+## Exercises Notes
+
+- The most challenging prolem: [Project 05](./projects/05.c)
