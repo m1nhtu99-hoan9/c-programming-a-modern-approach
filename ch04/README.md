@@ -15,7 +15,9 @@
 
 ## Relating Chapters
 
-Chapter 23: `pow` function, `fmod` function 
+- Chapter 7: `printf` to print number in base 8
+- Chapter 23: `pow` function, `fmod` function 
 
 ## Exercises Notes
+- The most challenging projects: [*Project 04*](./projects/04.c).
 
