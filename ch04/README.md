@@ -8,7 +8,7 @@
 - The assignment operator requires an `lvalue` as its left operand. 
 
 ### Trivias
-- Be aware of implementation-define behaviour.
+- Be aware of implementation-defined behaviour.
 - Avoid undefined behaviour.
 - `rvalue` and "expression" are the terms can be used interchangeably.
 - `v += e` isn't equivalent to `v = v + e`. For instance, `a[i++] += 2` behaves differently to `a[i++] = a[i++] + 2`.
