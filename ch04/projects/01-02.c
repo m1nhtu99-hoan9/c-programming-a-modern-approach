@@ -11,7 +11,7 @@ int main()
   printf("Enter a natural number: "); 
   scanf("%d", &num);
 
-  while (num > 0) {
+  while (num != 0) {
     // pad a new ones column to `reversed_num`
     reversed_num *= 10; 
     // add the last digit of `num` to the recently created column
