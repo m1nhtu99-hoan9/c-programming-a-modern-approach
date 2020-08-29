@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+/* Print out English word for a two-digit number */
+
 const char *ones_to_eng(int n);
 const char *tens_to_eng(int n);
 const char *between_10_to_20_eng(int n);
