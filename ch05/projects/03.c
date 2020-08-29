@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 /* Calculate rival's commission and store its value to pointer `rival_ptr` */
@@ -9,7 +8,6 @@ void get_broker_commission(float *broker_ptr, int value);
 
 int main()
 {
-
   int shares, price_per_share, value;
   float broker_commission, rival_commission;
 

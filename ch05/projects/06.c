@@ -3,7 +3,7 @@
 /* Given an UPC-A code, check if the given code is valid */
 
 /* Compute UPC Check Digit */
-int get_check_digit(int item_digit, int (*m_digits_ptr)[5], int (*p_digits_ptr)[5]);
+int get_check_digit(int item_digit, const int (*m_digits_ptr)[5], const int (*p_digits_ptr)[5]);
 
 int main()
 {
@@ -31,7 +31,7 @@ int main()
 
 /* implementation */
 
-int get_check_digit(int item_digit, int (*m_digits_ptr)[5], int (*p_digits_ptr)[5])
+int get_check_digit(int item_digit, const int (*m_digits_ptr)[5], const int (*p_digits_ptr)[5])
 {
   /*
     UPC 1st  digit = item                  ; UPC 2nd  digit = manufacturer_digits[0];
