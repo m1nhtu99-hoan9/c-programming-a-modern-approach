@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-const char *get_am_pm(int h);
-int convert_hour(int h);
+const char *get_am_pm(const int h);
+const int convert_hour(const int h);
 
 int main()
 {
@@ -24,12 +24,12 @@ int main()
   return 0;
 }
 
-const char *get_am_pm(int h)
+const char *get_am_pm(const int h)
 {
   return (h < 12) ? "AM\0" : "PM\0";
 }
 
-int convert_hour(int h)
+const int convert_hour(const int h)
 {
   return (h > 12) ? (h % 12) : h;
 }

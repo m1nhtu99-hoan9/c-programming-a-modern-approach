@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 /* Calculate rival's commission and store its value to pointer `rival_ptr` */
-void get_rival_commission(float *rival_ptr, int num_of_shares);
+void get_rival_commission(float (*const rival_ptr), const int num_of_shares);
 
 /* Calculate broker's commission and store its value to pointer `broker_ptr` */
-void get_broker_commission(float *broker_ptr, int value);
+void get_broker_commission(float (*const broker_ptr), const int value);
 
 int main()
 {
@@ -29,7 +29,7 @@ int main()
 
 /* Implementation */
 
-void get_rival_commission(float *rival_ptr, int num_of_shares)
+void get_rival_commission(float (*const rival_ptr), const int num_of_shares)
 {
   if (num_of_shares < 2000)
     *rival_ptr = 33 + (num_of_shares * 0.03);
@@ -37,7 +37,7 @@ void get_rival_commission(float *rival_ptr, int num_of_shares)
     *rival_ptr = 33 + (num_of_shares * 0.02);
 }
 
-void get_broker_commission(float *broker_ptr, int value)
+void get_broker_commission(float (*const broker_ptr), const int value)
 {
   int base;
   float ratio;

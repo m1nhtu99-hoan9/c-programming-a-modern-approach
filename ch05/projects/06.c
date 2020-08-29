@@ -2,8 +2,9 @@
 
 /* Given an UPC-A code, check if the given code is valid */
 
-/* Compute UPC Check Digit */
-int get_check_digit(int item_digit, const int (*m_digits_ptr)[5], const int (*p_digits_ptr)[5]);
+/* Compute UPC-A Check Digit */
+const int get_check_digit(const int item_digit,
+                    int (*const m_digits_ptr)[5], int (*const p_digits_ptr)[5]);
 
 int main()
 {
@@ -31,8 +32,12 @@ int main()
 
 /* implementation */
 
-int get_check_digit(int item_digit, const int (*m_digits_ptr)[5], const int (*p_digits_ptr)[5])
+const int get_check_digit(const int item_digit,
+                    int (*const m_digits_ptr)[5], int (*const p_digits_ptr)[5])
 {
+  // by signifying that parameters need to be constant pointer, 
+  // it is impossible to pass in NULL pointer
+
   /*
     UPC 1st  digit = item                  ; UPC 2nd  digit = manufacturer_digits[0];
     UPC 3rd  digit = manufacturer_digits[1]; UPC 4th  digit = manufacturer_digits[2];
