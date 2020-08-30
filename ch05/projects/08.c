@@ -61,15 +61,16 @@ int main()
   printf("Enter a 24-hour time: ");
   scanf("%d:%d", &user_time.h, &user_time.m);
 
-  min = minutes_difference(FLIGHTS[6].departure, user_time);
-  i_of_min = 6;
-  for (i = 5; i >= 0; i--)
+  for (min = minutes_difference(FLIGHTS[6].departure, user_time),
+      i_of_min = 6,
+      i = 5;
+      i >= 0; i--)
   {
     int this_diff = minutes_difference(FLIGHTS[i].departure, user_time);
     if (this_diff <= min)
       // update the new smallest amount of minutes differences and its index
       i_of_min = i;
-      min = this_diff;
+    min = this_diff;
   }
 
   printf("Closest departure time is ");
