@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* Find the earliest flight to the time user input */
 struct Time
 {
   int h;
