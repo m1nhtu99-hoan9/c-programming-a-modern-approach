@@ -21,8 +21,8 @@ void process_find_gcd(int *const a, int *const b)
 /** Pure Function Implementing Euclid's Algorithm Recursively to 
  *    Find the Greatest Common Divisor (GCD)
  */
-const int find_gcd (int a, int b) {
+const int find_gcd(int a, int b)
+{
   int temp = a % b;
-  if (temp == 0) return b;
-  else           return find_gcd(b, a % b);
+  return (temp == 0) ? b : find_gcd(b, temp);
 }

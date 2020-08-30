@@ -18,3 +18,6 @@ for (d = 2; d <= n && n % d != 0; d++);
 /* or to make it stand out */
 for (d = 2; d <= n && n % d != 0; d++) {};
 ```
+
+### Exercising Notes
+- The most significant projects: [Project 08](./projects/08.c)
