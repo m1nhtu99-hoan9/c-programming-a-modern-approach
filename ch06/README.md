@@ -20,4 +20,4 @@ for (d = 2; d <= n && n % d != 0; d++) {};
 ```
 
 ### Exercising Notes
-- The most significant projects: [Project 08](./projects/08.c)
+- The most significant projects: [Project 08](./projects/08.c), [Project 10](./projects/10.c)
