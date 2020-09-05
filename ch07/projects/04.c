@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 /* Convert alphabetic phone number into numeric form */
 
@@ -7,17 +8,19 @@ void convert_char_to_digit(char *const chr_ptr, int id);
 
 int main()
 {
+  int len;
   char *const phone_number;
+  
   printf("Enter phone number: ");
   scanf("%s", phone_number);
-
-  for (int i = 0; phone_number != NULL; i++)
+  len = strlen(phone_number);
+  
+  for (int i = 0; i < len; i++)
   {
     convert_char_to_digit(phone_number, i);
-    printf("%c", phone_number[i]);
   }
 
-  //printf("%s", *phone_number);
+  printf("%s\n", phone_number);
 
   return 0;
 }
