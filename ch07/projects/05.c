@@ -56,4 +56,7 @@ int point_of_char(char *const arr_ptr, size_t id)
       }
     }
   }
+
+  /* will never get here */
+  return 0;
 }
