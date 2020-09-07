@@ -3,7 +3,8 @@
 
 /** 
  * Naively simplified arithmetic expression parser 
- * Expresion evaluation is left-associative & no operator takes precedence over any other operator
+ * Expresion evaluation is left-associative 
+ * & no operator takes precedence over any other operator
  * */
 
 int main()
@@ -11,15 +12,15 @@ int main()
   float cur = 0.0f, res = 0.0f;
   char chr;
 
-
   printf("Enter an expression: ");
-  // initialise `running_total` with the first operand of the input expression
+  // initialise `res` with the first operand of the input expression
   scanf("%f", &res);
 
-  // fetch chars being the in buffer to `getchar` calls
+  // consume chars being the in buffer using `getchar` calls
   while ((chr = getchar()) != '\n')
   {
-    // at this point, operator char already at the head of buffer was already removed & stored in `chr`
+    // at this point, operator character at the head of buffer was already
+    // removed out of the buffer & stored in `chr`
     switch (chr)
     {
     case '+':
