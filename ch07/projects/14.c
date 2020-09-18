@@ -28,6 +28,7 @@ int main()
   }
   else
   {
+    /* iteratively carries out guesses until `temp` reaches the desired closeness */
     for (;;)
     {
       /* 
