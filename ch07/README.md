@@ -32,3 +32,10 @@ printf("Size of int: %zu\n", sizeof(int));
 
 - Chapter 9: Implicit type conversions
 - Chapter 20: Octal & hex notations
+
+## Exercising Notes
+
+- Significant projects:
+    - [`project 4`](./projects/04.c) (about string as array notation versus as pointer of `char`)
+    - [`project 12`](./projects/12.c) (illustrate on how to take advantage of buffer in C)
+    - [`project 14`](./projects/14.c) (discuss on operator precedence in C)

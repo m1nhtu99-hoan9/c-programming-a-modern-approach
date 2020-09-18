@@ -18,7 +18,7 @@ const int minutes_since_midnight(const struct Time t);
 const int minutes_difference(const struct Time t1, const struct Time t2);
 const char *get_am_pm(const int h);
 const int convert_hour(const int h);
-void print_time(const struct Time t);
+void Time_print(const struct Time t);
 
 int main()
 {
@@ -75,9 +75,9 @@ int main()
   }
 
   printf("Closest departure time is ");
-  print_time(FLIGHTS[i_of_min].departure);
+  Time_print(FLIGHTS[i_of_min].departure);
   printf(", arriving at ");
-  print_time(FLIGHTS[i_of_min].arrival);
+  Time_print(FLIGHTS[i_of_min].arrival);
   printf(".\n");
 
   return 0;
@@ -105,7 +105,7 @@ const int convert_hour(const int h)
   return (h > 12) ? (h % 12) : h;
 }
 
-void print_time(const struct Time t)
+void Time_print(const struct Time t)
 {
   printf("%.2d:%.2d %s", convert_hour(t.h), t.m, get_am_pm(t.h));
 }
