@@ -8,13 +8,8 @@ char *const VOWELS = "AEOUIaeoui";
 int main()
 {
   char cur, *inp;
-  int res = 0, index_array[128];
-
-  /* fill index_array with zeroes */
-  for (int i = 0; i < 128; i++)
-  {
-    index_array[i] = 0;
-  }
+  // declares an array and fills its values with zeroes
+  int res = 0, index_array[128] = {};
 
   /* count number of occurances for each character in user's input */
   printf("Enter a sentence: ");

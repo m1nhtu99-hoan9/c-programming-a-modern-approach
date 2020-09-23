@@ -39,6 +39,7 @@ short fact_short(int *const n)
 
   return res;
 }
+
 int fact_int(int *const n)
 {
   int res = 1;
@@ -50,6 +51,7 @@ int fact_int(int *const n)
 
   return res;
 }
+
 long fact_long(int *const n)
 {
   long res = 1;
@@ -61,6 +63,7 @@ long fact_long(int *const n)
 
   return res;
 }
+
 long long fact_long_long(int *const n)
 {
   long long res = 1;
@@ -72,6 +75,7 @@ long long fact_long_long(int *const n)
 
   return res;
 }
+
 float fact_float(int *const n)
 {
   float res = 1.0;
@@ -95,6 +99,7 @@ double fact_double(int *const n)
 
   return res;
 }
+
 long double fact_long_double(int const *n)
 {
   long double res = 1.0;
