@@ -30,3 +30,5 @@
 - Chapter 26: `time`, `srand`, `rand` functions
 
 ## Exercising Notes
+- The most significant projects: 
+  - [project 06](./projects/06.c): relationship between string and pointer

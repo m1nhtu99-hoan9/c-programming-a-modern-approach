@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* Print out sums of rows and columns of a 5x5 table */
+
 int main()
 {
   int i, j, cur, col_sums[5] = {}, row_sums[5] = {};
