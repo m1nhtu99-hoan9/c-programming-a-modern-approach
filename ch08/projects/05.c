@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /* modified version of `interest.c` */
 
@@ -7,7 +6,7 @@ int main(void)
 {
   int i, low_rate, num_years, month, year;
   const int INITIAL_BALANCE = 100.00;
-  double value[5] = ;
+  double value[5];
   const int NUM_RATES = (int)(sizeof(value) / sizeof(value[0]));
 
   printf("Enter interest rate: ");

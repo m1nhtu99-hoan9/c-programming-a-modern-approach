@@ -35,3 +35,6 @@
 
 # Debug files
 *.dSYM/
+
+# Make file
+CMakeLists.txt
