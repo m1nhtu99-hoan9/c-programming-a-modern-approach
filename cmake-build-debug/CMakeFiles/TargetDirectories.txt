@@ -1,0 +1,3 @@
+/home/mnhthng/Documents/My_Code_Snippets/C stuffs/C Programming A Modern Approach/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/mnhthng/Documents/My_Code_Snippets/C stuffs/C Programming A Modern Approach/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mnhthng/Documents/My_Code_Snippets/C stuffs/C Programming A Modern Approach/cmake-build-debug/CMakeFiles/C_Programming_A_Modern_Approach.dir
