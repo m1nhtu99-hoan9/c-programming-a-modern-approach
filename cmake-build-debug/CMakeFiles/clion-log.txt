@@ -1,4 +1,0 @@
-"/home/mnhthng/.local/share/JetBrains CLion-2020.2.3/bin/cmake/linux/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang -G "CodeBlocks - Unix Makefiles" "/home/mnhthng/Documents/My_Code_Snippets/C stuffs/C Programming A Modern Approach"
--- Configuring done
--- Generating done
--- Build files have been written to: /home/mnhthng/Documents/My_Code_Snippets/C stuffs/C Programming A Modern Approach/cmake-build-debug

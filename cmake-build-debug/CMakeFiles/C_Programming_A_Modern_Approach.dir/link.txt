@@ -1,1 +1,0 @@
-/usr/bin/clang -g   CMakeFiles/C_Programming_A_Modern_Approach.dir/ch08/projects/09.c.o  -o C_Programming_A_Modern_Approach 
