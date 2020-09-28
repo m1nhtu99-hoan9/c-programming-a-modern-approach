@@ -8,7 +8,7 @@
 #define LEFT  2
 #define RIGHT 3
 
-/** Returns either 0, 1, 2, 3 or -1 in case there are no movable directions */
+/* Trail of alphabet characters */
 
 int main() {
   char board[10][10] = {}, cur_elem;
