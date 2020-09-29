@@ -1,71 +1,62 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <stdbool.h>
 
-unsigned short int board[99][99] = {};
-bool is_used[99 * 99 + 1] = {false};
+/* De la Loubère's method for solving magic square
+ * @reference https://www.magic-squares.info/methods/odd.html
+ * */
 
-void populate_cell(const unsigned short int row, const unsigned short int col, unsigned short int value) {
-  board[row][col] = value;
-  is_used[value] = true;
-}
+int board[99][99] = {};
 
 int main() {
-  unsigned short int i, j, size;
-  srand((unsigned) time(NULL));
+  short int cur_x, cur_y, next_x, next_y;
+  unsigned short i, j, size;
 
   printf("This program creates a magic square of a specific size.\n");
   printf("The size must be an odd number between 1 and 99.\n");
   printf("Enter size of magic number: ");
   scanf("%hu", &size);
 
+  /* validate number of size */
   if (size < 0 || size > 99) {
     printf("INVALID INPUT!\n");
     return 1;
   }
-  else {
-    if (size % 2 == 0)
-      size++;
 
-    /* initiate variables */
-    const unsigned short int LAST_NUM = size * size, HALF_SIZE = size / 2, MAGIC_SUM = (1 + LAST_NUM) * size / 2;
+  if (size % 2 == 0)
+    size++;
 
-    /* populate the board */
-    board[HALF_SIZE][HALF_SIZE] = (1 + LAST_NUM) / 2;
-    i = rand() % 25 + 1;
-    populate_cell(0, 0, i);
-    i = (1 + LAST_NUM) - board[0][0];
-    populate_cell(size - 1, size - 1, i);
+  /* implement De la Loubère's method */
+  for (i = 1, cur_x = size / 2, cur_y = 0;
+       i <= size * size;
+       i++)
+  {
+    board[cur_y][cur_x] = i;
 
-    for (i = board[0][0]; i == board[0][0] || i == board[size - 1][size - 1];) {
-      i = rand() % 25 + 1;
+    next_y = (size + cur_y - 1) % size;
+    next_x = (cur_x + 1) % size;
+
+    if (board[next_y][next_x] == 0) {
+      // move the cursor 1 row upward and 1 column to the rightward
+      cur_y = next_y;
+      cur_x = next_x;
     }
-    populate_cell(size - 1, 0, i);
-    i = (1 + LAST_NUM) - board[size - 1][0];
-    populate_cell(0, size - 1, i);
-
-    i = MAGIC_SUM - 2 * (board[0][0] + board[0][size - 1]);
-    populate_cell(0, HALF_SIZE, i);
-    i = (1 + LAST_NUM) - board[0][HALF_SIZE];
-    populate_cell(size - 1, HALF_SIZE, i);
-
-    i = MAGIC_SUM - 2 * (board[0][0] + board[size - 1][0]);
-    populate_cell(HALF_SIZE, 0, i);
-    i = (1 + LAST_NUM) - board[(int) HALF_SIZE][0];
-    populate_cell(HALF_SIZE, size - 1, i);
-
-    /* print the board out */
-    printf("Magic sum: %hu\n", MAGIC_SUM);
-    for (i = 0; i < size; i++) {
-      for (j = 0; j < size; j++) {
-        printf("%2d ", board[i][j]);
-      }
-      printf("\n");
+    else {
+      // if the cell to move to is already populated, move the cursor 1 row downward
+      next_y = (cur_y + 1) % size;
+      cur_y = next_y;
     }
 
-    return 0;
+    // printf("Num: %d <current row: %d, current column: %d>\n", i, cur_y, cur_x);
   }
+
+  /* print the board out */
+  for (i = 0; i < size; i++) {
+    for (j = 0; j < size; j++) {
+      printf("%6d ", board[i][j]);
+    }
+    printf("\n");
+  }
+
+  return 0;
 }
 
 

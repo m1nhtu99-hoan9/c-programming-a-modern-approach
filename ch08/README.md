@@ -31,4 +31,5 @@
 
 ## Exercising Notes 
 - The most significant projects: 
-  - [project 06](./projects/06.c): relationship between string and pointer
+  - [project 06](./projects/06.c) & [project 15](./projects/15.c): relationship between string and pointer
+  - [project 17](./projects/17.c): implement De la Loubère's method to solve `NxN` magic square
