@@ -9,7 +9,7 @@
 - To read character, use `ch = getchar()` instead of `scanf("%c", &ch)`
 
 ```C
-while ((chr = getchar()) != \n)
+while ((chr = getchar()) != '\n')
   ;
 ```
 
