@@ -23,15 +23,17 @@ int main() {
      every time the program is executed */
   srand((unsigned) time(NULL));
 
-  /* populate the board with `.` */
-  for (i = 0; i < 10; i++) {
-    for (j = 0; j < 10; j++) {
-      board[j][i] = '.';
+  for (unsigned short int k = 0; k < 4; k++) {
+    /* populate the board with `.` */
+    for (i = 0; i < 10; i++) {
+      for (j = 0; j < 10; j++) {
+        board[j][i] = '.';
+      }
     }
-  }
 
-  generate_random_walk(board);
-  print_array(board);
+    generate_random_walk(board);
+    print_array(board);
+  }
 
   return 0;
 }

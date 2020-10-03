@@ -22,6 +22,23 @@ int sum_array(int a[static 3], int n);
 int total = sum_array((int []) {3, 0, 3, 4, 1}, 5);  
 ```
 
-### Related Chapters
+
+### Errata
+
+- In page 217:
+
+ ```C
+void create_magic_square (int n, char magic_square[n][n]);
+void print_magic_square (int n, char magic_square[n][n]); 
+ ```
+
+is actually: 
+
+```C
+void create_magic_square (int n, int magic_square[n][n]);
+void print_magic_square (int n, int magic_square[n][n]); 
+```
 
 ## Exercising Notes
+- The most significant projects: 
+    - [project 01](./projects/01.c): recursive selection sort
