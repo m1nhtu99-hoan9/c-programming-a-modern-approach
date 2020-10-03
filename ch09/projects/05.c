@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /* De la Loubère's method for solving magic square
  * modified version of `../../ch08/projects/17.c` */
 
 int i, j;
+int board[99][99] = {};
 
 /* Implement De la Loubère's method to create magic square of size n*n */
 void create_magic_square(int n, int magic_square[n][n]);
@@ -28,12 +28,8 @@ int main() {
   if (size % 2 == 0)
     size++;
 
-  int * board = (int *) malloc(size * sizeof(int));
-
-  create_magic_square(size, board);
-  print_magic_square(size, board);
-
-  free(board);
+  create_magic_square((int) size, (int (*)[size][size]) board);
+  print_magic_square((int) size, (int (*)[size][size]) board);
 
   return 0;
 }

@@ -42,3 +42,4 @@ void print_magic_square (int n, int magic_square[n][n]);
 ## Exercising Notes
 - The most significant projects: 
     - [project 01](./projects/01.c): recursive selection sort
+    - [project 05](./projects/05.c): pointer to multi-dimensional array
