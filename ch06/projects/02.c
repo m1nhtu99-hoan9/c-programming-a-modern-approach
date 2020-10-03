@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "gcd.h"
 
+/* to compile, add both this file, `gcd.c` and `gcd.h` to list of executables */
+
 int main()
 {
   int m, n;
