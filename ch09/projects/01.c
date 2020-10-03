@@ -4,8 +4,6 @@
 /* Selection Sort */
 
 void selection_sort(int *const arr, int cur_id) {
-  int max_i, tmp, i;
-
   if (!cur_id) {
     /* base case */
     // printf("<debug>base case</debug>\n");
@@ -13,6 +11,7 @@ void selection_sort(int *const arr, int cur_id) {
   }
   else {
     /* recursive cases */
+    int max_i, tmp, i;
 
     // find the maximum value in the current sub-array
     for (max_i = 0, i = 1; i < cur_id; i++) {
@@ -32,26 +31,24 @@ void selection_sort(int *const arr, int cur_id) {
 }
 
 int main() {
-  char chr_cur;
   int i, len;
   int *arr = (int *) calloc(100, sizeof(int));
 
   printf("Input array of integers\n");
   printf("(please start your input with a blank space, and then each number separated by a black space): \n");
   for (i = 0
-      // consume blank space between input numbers
-      ; i < 100 && (chr_cur = getchar() != '\n')
-      ; i++) {
+    // consume blank space between input numbers
+      ; i < 100 && (getchar() != '\n'); i++) {
     scanf(" %d", arr + i);
   }
   len = i;
 
   // printf("<debug> Array address: %p </debug>\n", arr);
-  printf("<debug> Input array: ");
-  for (i = 0; i < len; i++) {
-    printf("%d ", arr[i]);
-  }
-  printf("</debug>\n");
+  // printf("<debug> Input array: ");
+  // for (i = 0; i < len; i++) {
+  //   printf("%d ", arr[i]);
+  // }
+  // printf("</debug>\n");
 
   selection_sort(arr, len);
 
