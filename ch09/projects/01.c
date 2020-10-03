@@ -3,47 +3,56 @@
 
 /* Selection Sort */
 
-void swap(int *a_ptr, int *b_ptr) {
-  *a_ptr = *a_ptr + *b_ptr;
-  *b_ptr = *a_ptr - *b_ptr;
-  *a_ptr = *a_ptr - *b_ptr;
-}
+void selection_sort(int *const arr, int cur_id) {
+  int max_i, tmp, i;
 
-void sort_iteration_step(int *const arr, int length) {
-  int i, max_id, max;
-
-  for (i = max_id = 0, max = *(arr + 0); i <= length - 1; i++) {
-    if (*(arr + i) > max) {
-      max = *(arr + i);
-      max_id = i;
-    }
+  if (!cur_id) {
+    /* base case */
+    // printf("<debug>base case</debug>\n");
+    return;
   }
+  else {
+    /* recursive cases */
 
-  swap(arr + length - 1, arr + max_id);
-}
+    // find the maximum value in the current sub-array
+    for (max_i = 0, i = 1; i < cur_id; i++) {
+      if (arr[i] > arr[max_i]) {
+        max_i = i;
+      }
+    }
 
-void selection_sort(int *const arr, int length) {
-  if (length > 1) {
-    sort_iteration_step(arr, length);
-    selection_sort(arr, length - 1);
+    // printf("<debug> current_id: %d, index of max value: %d, max value: %d </debug>\n", cur_id, max_i, arr[max_i]);
+    // swap the largest element with the last element in the current sub-array
+    tmp = arr[max_i];
+    arr[max_i] = arr[cur_id - 1];
+    arr[cur_id - 1] = tmp;
+
+    selection_sort(arr, cur_id - 1);
   }
 }
 
 int main() {
+  char chr_cur;
   int i, len;
-  int *arr = (int *) calloc(10000, sizeof(int));
+  int *arr = (int *) calloc(100, sizeof(int));
 
   printf("Input array of integers\n");
-  printf("(each number separated by enter character; to signify end of the input, type 'q' and then enter): \n");
-  for (i = 0; i < 100000; i++) {
-    len = scanf("%d", arr + i);
-    if (!len) {
-      break;
-    }
+  printf("(please start your input with a blank space, and then each number separated by a black space): \n");
+  for (i = 0
+      // consume blank space between input numbers
+      ; i < 100 && (chr_cur = getchar() != '\n')
+      ; i++) {
+    scanf(" %d", arr + i);
   }
   len = i;
 
-  printf("Array address: %p\n", arr);
+  // printf("<debug> Array address: %p </debug>\n", arr);
+  printf("<debug> Input array: ");
+  for (i = 0; i < len; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("</debug>\n");
+
   selection_sort(arr, len);
 
   printf("Sorted array: ");
