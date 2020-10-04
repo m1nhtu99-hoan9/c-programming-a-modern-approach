@@ -53,7 +53,6 @@ bool play_game() {
 }
 
 int main() {
-  char opt;
   unsigned int win_num = 0, lose_num = 0;
 
   /* prevent the generator from generating the same result
@@ -67,8 +66,11 @@ int main() {
       lose_num++;
 
     printf("Play again? ");
-    scanf("%c", &opt);
-    if (opt == 'y') {
+
+    if (getchar() == 'y') {
+      // consume trailing '\n' character;
+      getchar();
+
       continue;
     }
     else {
