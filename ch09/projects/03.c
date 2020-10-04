@@ -13,6 +13,7 @@
 short int i, j;
 
 void generate_random_walk(char walk[10][10]);
+
 /* print the board out */
 void print_array(char walk[10][10]);
 
@@ -84,9 +85,9 @@ void generate_random_walk(char walk[10][10]) {
 
 
     if (possible_move_num == 0) {
-      dir = -1;
       break;
-    } else {
+    }
+    else {
       // finalise list of possibilities
       for (i = 0, j = 0; i < 4 && j <= possible_move_num; i++) {
         if (movable[i]) {

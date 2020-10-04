@@ -5,8 +5,8 @@ double compute_polynomial(float x) {
   int i;
   const int COEFFS[6] = {3, 2, -5, -1, 7, -6};
 
-  for (i = 1
-      , res = COEFFS[0] * x + COEFFS[1]
+  for (i = 0
+      , res = COEFFS[0]
       ; i < 5
       ; i++) {
     res = res * x + COEFFS[i + 1];
@@ -22,7 +22,7 @@ int main() {
   printf("Input x: ");
   scanf("%f", &inp);
 
-  printf("Result: %lf\n", compute_polynomial(inp));
+  printf("Result: %.3f\n", compute_polynomial(inp));
   return 0;
 }
 
