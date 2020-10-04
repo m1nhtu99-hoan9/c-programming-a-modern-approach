@@ -8,18 +8,24 @@ int main() {
   char cur;
 
   printf("Enter parentheses and/or braces: ");
-  for (cur = getchar(); cur != '\n'; cur = getchar()) {
-    if (cur == '(' || cur == '{') {
+  while ((cur = getchar()) != '\n') {
+    if ((cur == '(') || (cur == '{')) {
       /* after this point, the latest opening bracket/brace will be put on top of the stack */
       stack_push(cur);
     }
-    else if (cur == ')' && stack_pop() != '(') {
+    else if ((cur == ')') && (stack_pop() != '(')) {
       /* if the currently reading character doesn't matches the latest opening bracket */
+
+      // printf("<debug>current top element: %c, its index: %d</debug>\n"
+      //       , stack_current_top(), stack_current_top_index());
       printf("Round brackets are not nested properly!\n");
       return 1;
     }
-    else if (cur == '}' && stack_pop() != '}') {
+    else if ((cur == '}') && (stack_pop() != '{')) {
       /* if the currently reading character doesn't matches the latest opening brace */
+
+      // printf("<debug>current top element: %c, its index: %d</debug>\n"
+      //       , stack_current_top(), stack_current_top_index());
       printf("Braces are not nested properly!\n");
       return 1;
     }
@@ -29,7 +35,8 @@ int main() {
     printf("Parentheses/braces are nested properly!\n");
   }
   else {
-    /* the program reaches here if user input contains invalid characters */
+    /* the program reaches here if user input contains invalid characters
+     * or if the number of opening brackets/braces is bigger than the number of closing ones */
     printf("Parentheses/braces are not nested properly!\n");
   }
 
