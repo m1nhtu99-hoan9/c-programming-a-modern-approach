@@ -9,3 +9,4 @@
 ## Exercising Notes
 
 - Both project 3, project 4 and project 5 have been done in only [code file](./projects/03-05.c).
+- Illustration for project 7: ![7 segment display](./7_segment_display.png)

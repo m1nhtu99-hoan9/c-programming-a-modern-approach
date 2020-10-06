@@ -39,6 +39,7 @@ int main () {
         intstack_push(tmp);
       }
       else if (cur == '=') {
+        // if no '=' is read yet, persist current stack for the next expression input
         printf("Value of expression: %d\n", intstack_is_empty() ? 0 : intstack_current_top());
         break;
       }
