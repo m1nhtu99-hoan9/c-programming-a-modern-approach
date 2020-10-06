@@ -102,8 +102,15 @@ void analyse_hand(int hand[5][2])
   /* check for straight & royal flush */
   i = 0;
   while (num_in_rank[i] == 0) i++;
-  for (; i < NUM_RANKS && num_in_rank[i] > 0; i++) {
+  // printf("<debug>Initial index of the loop checking for \"straight\": %d</debug>\n", i);
+  for (; i < NUM_RANKS && num_in_rank[i] > 0;i++) {
     num_consec++;
+
+    /* exclusively for the case of "ace-low straight" */
+    if (i == 0 && num_in_rank[NUM_RANKS - 1] > 0) {
+      num_consec++;
+    }
+
     // printf("<debug>checking for \"straight\", index: %d</debug>\n", i);
   }
   if (num_consec == NUM_CARDS) {

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "stack_01.h"
+#include "stack_char.h"
 
 /* Using stack to check if brackets/braces are nested properly
  * to run this program, compile both this file, `stack.h` and `stack.c` */

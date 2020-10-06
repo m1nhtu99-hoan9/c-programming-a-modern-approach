@@ -1,10 +1,9 @@
 #include "poker_01.h"
 
-/* Refactored version of `poker.c`*/
+/* Refactored version of `poker.c` */
 
 #define NUM_RANKS 13
 #define NUM_SUITS 4
-#define NUM_CARDS 5
 
 /* Ranks: 2 3 4 5 6 7 8 9 t j q k a
  * Suits: c d h s

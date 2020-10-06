@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "stack_01.h"
+#include "stack_char.h"
 
 #define STACK_SIZE 100
 

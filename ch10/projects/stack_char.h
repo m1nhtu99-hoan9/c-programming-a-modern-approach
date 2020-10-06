@@ -1,6 +1,6 @@
 #include <stdbool.h>
 
-#ifndef C_PROGRAMMING_A_MODERN_APPROACH_STACK_01
+#ifndef C_PROGRAMMING_A_MODERN_APPROACH_STACK_CHAR_H
 
 /* Empty the stack */
 void stack_make_empty();
@@ -22,6 +22,6 @@ void stack_overflow();
 /* Behaviours for when the stack is underflow */
 void stack_underflow();
 
-#define C_PROGRAMMING_A_MODERN_APPROACH_STACK_01
+#define C_PROGRAMMING_A_MODERN_APPROACH_STACK_CHAR_H
 
-#endif //C_PROGRAMMING_A_MODERN_APPROACH_STACK_01
+#endif //C_PROGRAMMING_A_MODERN_APPROACH_STACK_CHAR_H
