@@ -8,7 +8,7 @@
 #define NUM_SUITS 4
 #define NUM_CARDS 5
 
-bool straight, flush, four, three;
+bool royal, straight, flush, four, three;
 int pairs;   /* can be 0, 1, or 2 */
 
 void read_cards(int hand[5][2])
@@ -18,14 +18,6 @@ void read_cards(int hand[5][2])
   int rank, suit;
   bool bad_card;
 
-//  for (rank = 0; rank < NUM_RANKS; rank++) {
-//    num_in_rank[rank] = 0;
-//    for (suit = 0; suit < NUM_SUITS; suit++)
-//      card_exists[rank][suit] = false;
-//  }
-//
-//  for (suit = 0; suit < NUM_SUITS; suit++)
-//    num_in_suit[suit] = 0;
   for (short int i = 0; i < NUM_CARDS; ) {
     bad_card = false;
 
@@ -87,6 +79,7 @@ void analyse_hand(int hand[5][2])
   int num_in_rank[NUM_RANKS] = {};
   int num_in_suit[NUM_SUITS] = {};
 
+  royal = false;
   straight = false;
   flush = false;
   four = false;
@@ -95,22 +88,31 @@ void analyse_hand(int hand[5][2])
 
   /* count number of occurrences for each i and j appeared in `hand`*/
   for (i = 0; i < 5; i++) {
-    num_in_suit[hand[i][0]]++;
-    num_in_rank[hand[i][1]]++;
+    num_in_rank[hand[i][0]]++;
+    num_in_suit[hand[i][1]]++;
   }
 
   /* check for flush */
-  for (j = 0; j < NUM_SUITS; j++)
-    if (num_in_suit[j] == NUM_CARDS)
+  for (j = 0; j < NUM_SUITS && !flush; j++) {
+    if (num_in_suit[j] == NUM_CARDS) {
       flush = true;
+    }
+  }
 
-  /* check for straight */
+  /* check for straight & royal flush */
   i = 0;
   while (num_in_rank[i] == 0) i++;
-  for (; i < NUM_RANKS && num_in_rank[i] > 0; i++)
+  for (; i < NUM_RANKS && num_in_rank[i] > 0; i++) {
     num_consec++;
+    // printf("<debug>checking for \"straight\", index: %d</debug>\n", i);
+  }
   if (num_consec == NUM_CARDS) {
     straight = true;
+    // printf("<debug>index value at the end of the loop checking for \"straight\": %d\n", i);
+    if (i == NUM_RANKS && straight && flush) {
+      royal = true;
+      // printf("<debug>checking for \"royal flush\"!</debug>\n");
+    }
     return;
   }
 
@@ -125,16 +127,16 @@ void analyse_hand(int hand[5][2])
 
 void print_result()
 {
-  if (straight && flush) printf("Straight flush");
-  else if (four)         printf("Four of a kind");
-  else if (three &&
-           pairs == 1)   printf("Full house");
-  else if (flush)        printf("Flush");
-  else if (straight)     printf("Straight");
-  else if (three)        printf("Three of a kind");
-  else if (pairs == 2)   printf("Two pairs");
-  else if (pairs == 1)   printf("Pair");
-  else                   printf("High card");
+  if (royal)                      printf("Royal flush");
+  else if (straight && flush)     printf("Straight flush");
+  else if (four)                  printf("Four of a kind");
+  else if (three && pairs == 1)   printf("Full house");
+  else if (flush)                 printf("Flush");
+  else if (straight)              printf("Straight");
+  else if (three)                 printf("Three of a kind");
+  else if (pairs == 2)            printf("Two pairs");
+  else if (pairs == 1)            printf("Pair");
+  else                            printf("High card");
 
   printf("\n\n");
 }
