@@ -83,7 +83,7 @@ void analyse_hand(int hand[5][2], bool *royal, bool *straight, bool *flush, bool
   *three = false;
   *pairs = 0;
 
-  /* count number of occurrences for each i and j appeared in `hand`*/
+  /* count number of occurrences for rank and suit of each card in `hand` */
   for (i = 0; i < 5; i++) {
     num_in_rank[hand[i][0]]++;
     num_in_suit[hand[i][1]]++;
@@ -100,7 +100,9 @@ void analyse_hand(int hand[5][2], bool *royal, bool *straight, bool *flush, bool
   i = 0;
   while (num_in_rank[i] == 0) i++;
   // printf("<debug>Initial index of the loop checking for \"straight\": %d</debug>\n", i);
-  for (; i < NUM_RANKS && num_in_rank[i] > 0;i++) {
+  for (
+      ; i < NUM_RANKS && num_in_rank[i] > 0
+      ; i++) {
     num_consec++;
 
     /* exclusively for the case of "ace-low straight" */
@@ -110,10 +112,11 @@ void analyse_hand(int hand[5][2], bool *royal, bool *straight, bool *flush, bool
 
     // printf("<debug>checking for \"straight\", index: %d</debug>\n", i);
   }
+
   if (num_consec == NUM_CARDS) {
     *straight = true;
     // printf("<debug>index value at the end of the loop checking for \"straight\": %d\n", i);
-    if (i == NUM_RANKS && *straight && flush) {
+    if (i == NUM_RANKS && *straight && *flush) {
       *royal = true;
       // printf("<debug>checking for \"royal flush\"!</debug>\n");
     }
@@ -124,7 +127,7 @@ void analyse_hand(int hand[5][2], bool *royal, bool *straight, bool *flush, bool
   for (i = 0; i < NUM_RANKS; i++) {
     if (num_in_rank[i] == 4) *four = true;
     if (num_in_rank[i] == 3) *three = true;
-    if (num_in_rank[i] == 2) *pairs++;
+    if (num_in_rank[i] == 2) (*pairs)++;
   }
 }
 
