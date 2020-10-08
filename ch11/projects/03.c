@@ -28,9 +28,15 @@ int main() {
   printf("Enter the fraction: ");
   scanf("%d/%d", &m, &n);
 
-  int tmp_m, tmp_n;
-  reduce(m, n, &tmp_m, &tmp_n);
+  if (n == 0) {
+    printf("DENOMINATOR HAS TO BE NON-ZERO!\n");
+    return 1;
+  }
+  else {
+    int tmp_m, tmp_n;
+    reduce(m, n, &tmp_m, &tmp_n);
 
-  printf("In lowest terms: %d/%d\n", m / tmp_m, n / tmp_m);
-  return 0;
+    printf("In lowest terms: %d/%d\n", m / tmp_m, n / tmp_m);
+    return 0;
+  }
 }
