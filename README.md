@@ -2,6 +2,7 @@
 
 This repo contains: 
 - My solutions to the exercises in [*K. N. King*'s "C Programming: A Modern Approach", second edition](http://knking.com/books/c2/).
+- My reading notes
 - [Source code](/textbook_code_snippets) of programs illustrated in the book.
 
 ## Table of Contents
