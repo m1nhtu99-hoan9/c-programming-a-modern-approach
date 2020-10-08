@@ -17,4 +17,6 @@ void foo(const int *p) {
 - A pointer is usually the same as address, but not always.
 
 ## Exercising Notes
+- In [project 02](./projects/02.c), I've changed declaration of `find_closest_flight` to fit my original solution.
+
 
