@@ -132,7 +132,7 @@ void analyse_hand(int hand[5][2], bool *royal, bool *straight, bool *flush, bool
 }
 
 
-void print_result(bool *royal, bool *straight, bool *flush, bool *four, bool *three, int *pairs)
+void print_result(bool * royal, bool *straight, bool *flush, bool *four, bool *three, int *pairs)
 {
   if (*royal)                       printf("Royal flush");
   else if (*straight && *flush)     printf("Straight flush");
