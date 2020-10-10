@@ -1,7 +1,9 @@
 #include <ctype.h>
 #include <stdio.h>
 
-/* Reverse the words in a sentence */
+/* Reverse the words in a sentence
+ * modified version of `../../ch08/projects/14.c`
+ */
 
 int main() {
   char cur = '\0', sentence[100][100] = {};
@@ -10,7 +12,7 @@ int main() {
   printf("Enter a sentence: ");
   /* Iteratively scan input and store it as array of words.
    * At the end of this loop, number of words in the sentence equals `j` minus 1
-   * */
+   */
   for (i = 0, j = 0; cur != '\n';) {
     cur = getchar();
     if (isspace(cur)) {
@@ -29,9 +31,12 @@ int main() {
   /* Print the sentence out in reverse */
   for (i = j; i >= 0; i--) {
     if (sentence[i][0] != '\0') {
-      for (j = 0; sentence[i][j] != '\0'; j++) {
-        printf("%c", sentence[i][j]);
+      for (char *j_ptr = sentence[i]; *j_ptr != '\0' ;j_ptr++) {
+        printf("%c", *j_ptr);
       }
+//      for (j = 0; sentence[i][j] != '\0'; j++) {
+//        printf("%c", sentence[i][j]);
+//      }
       printf(" ");
     }
     else {
@@ -44,3 +49,4 @@ int main() {
 }
 
 // Test case: "you can cage a swallow can't you" -> "you can't swallow a cage can you"
+

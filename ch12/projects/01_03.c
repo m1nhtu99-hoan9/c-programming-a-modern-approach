@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* Read a message, then print the reversal of the message */
+
 int main() {
   unsigned int i;
   char cur;
