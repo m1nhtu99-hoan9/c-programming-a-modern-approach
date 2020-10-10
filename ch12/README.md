@@ -23,3 +23,6 @@ int *p = (int []) {3, 0, 2, 5, 6};
 - [Chapter 17](../ch17): Advanced Uses of Pointers
 
 ## Exercising Notes
+
+- The most significant projects: 
+    - [project 6](./projects/06.c): quick-sort implementation using pointers to array as cursors
