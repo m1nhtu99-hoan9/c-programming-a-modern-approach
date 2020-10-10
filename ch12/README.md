@@ -1,4 +1,4 @@
-#Chapter 12: Pointers and Arrays 
+# Chapter 12: Pointers and Arrays 
 
 ## Reading Notes
 
