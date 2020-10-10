@@ -30,13 +30,10 @@ int main() {
 
   /* Print the sentence out in reverse */
   for (i = j; i >= 0; i--) {
-    if (sentence[i][0] != '\0') {
+    if (*(sentence[i]) != '\0') {
       for (char *j_ptr = sentence[i]; *j_ptr != '\0' ;j_ptr++) {
         printf("%c", *j_ptr);
       }
-//      for (j = 0; sentence[i][j] != '\0'; j++) {
-//        printf("%c", sentence[i][j]);
-//      }
       printf(" ");
     }
     else {
